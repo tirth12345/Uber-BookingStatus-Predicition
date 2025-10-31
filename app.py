@@ -89,7 +89,7 @@ if st.button('Predict for input'):
         st.markdown(f"**Booking Status:** {predicted_status}")
 
         # Only show cancellation reason if the booking was predicted as cancelled
-        if predicted_status in ('Cancelled by Customer', 'Cancelled by Driver'): 
+        if predicted_status in ('Cancelled by Customer', 'Cancelled by Driver'):
             st.markdown(f"**Cancellation Reason:** {predicted_reason}")
         else:
             st.markdown("**Cancellation Reason:** Not applicable (booking not cancelled)")
@@ -101,4 +101,3 @@ Notes:
 - If `artifacts/model.joblib` is missing, click "Train model (from CSV)" (ensure `ncr_ride_bookings.csv` is in the working dir).
 - The app now supports predicting cancellation reasons when the trained secondary models are available in `artifacts/` (they are trained automatically when `train_and_export.py` finds relevant rows).
 ''')
-# End of app.py

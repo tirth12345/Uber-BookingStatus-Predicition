@@ -63,5 +63,3 @@ Extending
 
 - Add training code for the customer/driver cancellation reason models and save them to `artifacts/`.
 - Add UI elements in `app.py` to show reason predictions when available.
-
-<!-- end -->
