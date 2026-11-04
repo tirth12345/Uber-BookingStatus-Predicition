@@ -161,6 +161,13 @@ def predict_from_input(input_dict: dict, artifacts_dir: str = 'artifacts') -> di
     input_df = input_df.reindex(columns=feat_names, fill_value=0)
 
     pred_encoded = model.predict(input_df)[0]
+    probabilities = model.predict_proba(input_df)[0]
+
+    print("Model classes:", model.classes_)
+    print("Predicted encoded class:", pred_encoded)
+    print("Class probabilities:", probabilities)
+    print("Feature values:")
+    print(input_df.to_dict(orient="records"))
     predicted_status = None
     if le_status is not None:
         try:
